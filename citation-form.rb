@@ -10,7 +10,7 @@
 # You are of course welcome to edit this list, adding or
 # removing abbreviations as you see fit.
 
-TABLE6 = {
+WORDS = {
     "academy" => "Acad.",
     "academies" => "Acads.",
     "administrative" => "Admin.",
@@ -141,11 +141,199 @@ TABLE6 = {
     "export" => "Exp.",
     "exports" => "Exps.",
     "federal" => "Fed.",
-    "federals" => "Feds."
+    "federation" => "Fed'n",
+    "federations" => "Fed'ns",
+    "fidelity" => "Fid.",
+    "finance" => "Fin.",
+    "financial" => "Fin.",
+    "financing" => "Fin.",
+    "foundation" => "Found.",
+    "foundations" => "Founds.",
+    "general" => "Gen.",
+    "government" => "Gov't",
+    "governments" => "Gov'ts",
+    "guaranty" => "Guar.",
+    "guaranties" => "Guars.",
+    "hospital" => "Hosp.",
+    "hospitals" => "Hosps.",
+    "housing" => "Hous.",
+    "import" => "Imp.",
+    "imports" => "Imps.",
+    "importer" => "Imp.",
+    "importers" => "Imps.",
+    "importation" => "Imp.",
+    "importations" => "Imps.",
+    "incorporated" => "Inc.",
+    "indemnity" => "Indem.",
+    "indemnities" => "Indems.",
+    "independent" => "Indep.",
+    "independents" => "Indeps.",
+    "industry" => "Indus.",
+    "industries" => "Indus.",
+    "industrial" => "Indus.",
+    "information" => "Info.",
+    "institute" => "Inst.",
+    "institutes" => "Insts.",
+    "institution" => "Inst.",
+    "institutions" => "Insts.",
+    "insurance" => "Ins.",
+    "international" => "Int'l",
+    "investment" => "Inv.",
+    "investments" => "Invs.",
+    "laboratory" => "Lab.",
+    "laboratories" => "Labs.",
+    "liability" => "Liab.",
+    "liabilities" => "Liabs.",
+    "limited" => "Ltd.",
+    "limiteds" => "Ltds.",
+    "litigation" => "Litig.",
+    "litigations" => "Litigs.",
+    "machine" => "Mach.",
+    "machines" => "Machs.",
+    "machinery" => "Mach.",
+    "machineries" => "Machs.",
+    "maintenance" => "Maint.",
+    "management" => "Mgmt.",
+    "managements" => "Mgmts.",
+    "manufacturer" => "Mfr.",
+    "manufacturers" => "Mfrs.",
+    "manufacturing" => "Mfg.",
+    "maritime" => "Mar.",
+    "market" => "Mkt.",
+    "markets" => "Mkts.",
+    "marketing" => "Mktg.",
+    "mechanic" => "Mech.",
+    "mechanics" => "Mechs.",
+    "mechanical" => "Mech.",
+    "medical" => "Med.",
+    "medicine" => "Med.",
+    "memorial" => "Mem'l",
+    "memorials" => "Mem'ls",
+    "merchant" => "Merch.",
+    "merchandise" => "Merch.",
+    "merchandising" => "Merch.",
+    "metropolitan" => "Metro.",
+    "metropolitans" => "Metros.",
+    "municipal" => "Mun.",
+    "mutual" => "Mut.",
+    "mutuals" => "Muts.",
+    "national" => "Nat'l",
+    "nationals" => "Nat'ls",
+    "north" => "N.",
+    "northern" => "N.",
+    "northeast" => "Ne.",
+    "northeastern" => "Ne.",
+    "northwest" => "Nw.",
+    "northwestern" => "Nw.",
+    "number" => "No.",
+    "organization" => "Org.",
+    "organizing" => "Org.",
+    "organizations" => "Orgs.",
+    "pacific" => "Pac.",
+    "partnership" => "P'ship",
+    "partnerships" => "P'ships",
+    "person" => "Pers.",
+    "personal" => "Pers.",
+    "personnel" => "Pers.",
+    "pharmaceutics" => "Pharm.",
+    "pharmaceutical" => "Pharm.",
+    "pharmaceuticals" => "Pharms.",
+    "perserve" => "Pres.",
+    "preservation" => "Pres.",
+    "probation" => "Prob.",
+    "product" => "Prod.",
+    "products" => "Prods.",
+    "production" => "Prod.",
+    "productions" => "Prods.",
+    "professional" => "Prof'l",
+    "professionals" => "Prof'ls",
+    "property" => "Prop.",
+    "properties" => "Props.",
+    "protection" => "Prot.",
+    "public" => "Pub.",
+    "publication" => "Publ'n",
+    "publishing" => "Publ'g",
+    "publications" => "Publ'ns",
+    "railroad" => "R.R.",
+    "railway" => "Ry.",
+    "refining" => "Ref.",
+    "railways" => "Rys.",
+    "regional" => "Reg'l",
+    "rehabilitation" => "Rehab.",
+    "reproductive" => "Reprod.",
+    "reproduction" => "Reprod.",
+    "resource" => "Res.",
+    "resources" => "Res.",
+    "restaurant" => "Rest",
+    "restaurants" => "Rests.",
+    "retirement" => "Ret.",
+    "road" => "Rd.",
+    "roads" => "Rds.",
+    "saving" => "Sav.",
+    "savings" => "Savs.",
+    "school" => "Sch.",
+    "schools" => "Sch.",
+    "science" => "Sci.",
+    "sciences" => "Scis.",
+    "secretary" => "Sec'y",
+    "secretaries" => "Sec'ys",
+    "security" => "Sec.",
+    "securities" => "Sec.",
+    "service" => "Serv.",
+    "services" => "Servs.",
+    "shareholder" => "S'holder",
+    "shareholders" => "S'holders",
+    "social" => "Soc.",
+    "society" => "Soc'y",
+    "south" => "S.",
+    "southern" => "S.",
+    "southeast" => "Se.",
+    "southeastern" => "Se.",
+    "southwest" => "Sw.",
+    "southwestern" => "Sw.",
+    "steamship" => "S.S",
+    "steamships" => "S.S",
+    "street" => "St.",
+    "subcommittee" => "Subcomm.",
+    "subcommittees" => "Subcomms.",
+    "surety" => "Sur.",
+    "sureties" => "Surs.",
+    "system" => "Sys.",
+    "systems" => "Sys.",
+    "technology" => "Tech.",
+    "technologies" => "Techs.",
+    "telecommunication" => "Telecomm.",
+    "telecommunications" => "Telecomms.",
+    "telephone" => "Tele.",
+    "telegraph" => "Tele.",
+    "telephones" => "Teles.",
+    "telegraphs" => "Teles.",
+    "temporary" => "Temp.",
+    "temporaries" => "Temps.",
+    "township" => "Twp.",
+    "townships" => "Twps.",
+    "transcontinental" => "Transcon.",
+    "transport" => "Transp.",
+    "transportation" => "Transp.",
+    "transports" => "Transps.",
+    "transportations" => "Transps.",
+    "trustee" => "Tr.",
+    "trustees" => "Trs.",
+    "turnpike" => "Tpk.",
+    "turnpikes" => "Tpk.",
+    "uniform" => "Unif.",
+    "university" => "Univ.",
+    "universities" => "Univs.",
+    "utility" => "Util.",
+    "utilities" => "Utils.",
+    "village" => "Vill.",
+    "villages" => "Vills.",
+    "west" => "W.",
+    "western" => "W."    
 }
-  # These abbreviations validated against the 18th edition of the Bluebook.
+  # These abbreviations check against the 18th edition of the Bluebook.
   # No claim of ownership is made about any abbrevation, because that
-  # would be silly.
+  # would be silly.  I made some personal judgments about pluralization.
   
   PLACES = {
   	'alabama' => 'Ala.',
@@ -208,28 +396,42 @@ TABLE6 = {
   
 
 ###########################################################
-# Yes, this is the whole program.
+# What follows is the substitution program.
+#
 # It takes the selected text, splits it into words,
 # checks to see if the word appears in the table above
 # (without regard to capitalization), and if so does
 # the substitution.  Then it reassembles the text
 # with spaces.
 
-# It's recommended to combine this with a nice
+# KNOWN ISSUE: This does not yet know how to process
+# terms that might be split into two words, such as "rail road"
+# or "south east."  I may need some guidance about whether
+# those present citation edge cases.
+
+# KNOWN ISSUE: These are 'dumb' apostrophes, which require
+# some tweaking in your word processor.
+
+# You might want to combine this with a nice
 # titlecase routine, such as the one published
 # by John Gruber.
+# Unfortunately, his does not first downcase the text,
+# so it chokes on ALL CAPS and can't fix it.
+# Because so many courts use the hideous ALL CAPS, 
+# I may have to modify his program or put another
+# script in between.
 
 # NOTE: After I have developed this, I may think
 # about some speed optimizations, such as merging these
-# into a single hash rather than separated by type.
+# all into a single hash rather than having separate ones.
 
 casename = STDIN.read
 casename.strip!
 tmp = Array.new
 
 casename.split(/\s/).each do |word|
-  if TABLE6.has_key?(word.downcase)
-    tmp << TABLE6[word.downcase].capitalize
+  if WORDS.has_key?(word.downcase)
+    tmp << WORDS[word.downcase].capitalize.gsub("'","\x27")
   elsif PLACES.has_key?(word.downcase)
     tmp << PLACES[word.downcase].capitalize    
   else
