@@ -16,6 +16,7 @@ WORDS = {
     "administrative" => "Admin.",
     "administration" => "Admin.",
     "administrator" => "Adm'r",
+    "administrators" => "Adm'rs",
     "administratrix" => "Adm'x",
     "advertising" => "Adver.",
     "agriculture" => "Agric.",
