@@ -409,7 +409,7 @@ WORDS = {
 # or "south east."  I may need some guidance about whether
 # those present citation edge cases.
 
-# KNOWN ISSUE: These are 'dumb' apostrophes, which require
+# KNOWN ISSUE: This produces 'dumb' apostrophes, which require
 # some tweaking in your word processor.
 
 # You might want to combine this with a nice
@@ -421,21 +421,52 @@ WORDS = {
 # I may have to modify his program or put another
 # script in between.
 
-# NOTE: After I have developed this, I may think
-# about some speed optimizations, such as merging these
-# all into a single hash rather than having separate ones.
+#####
+# whitelisted punctuation to save at the beginning and end of words
+# 40 is ASCII for a left paren, 41 is a right paren, 44 is a comma, 59 is a semicolon
+#
+# leading: only a left paren is understood
+# trailing: commas, semicolons, and right parens are understood
+LEADING_PUNCTUATION = [40]
+TRAILING_PUNCTUATION = [41, 44, 59]
 
 casename = STDIN.read
 casename.strip!
 tmp = Array.new
 
 casename.split(/\s/).each do |word|
-  if WORDS.has_key?(word.downcase)
-    tmp << WORDS[word.downcase].capitalize.gsub("'","\x27")
-  elsif PLACES.has_key?(word.downcase)
-    tmp << PLACES[word.downcase].capitalize    
-  else
-    tmp << word
+  leading_punctuation = []
+  trailing_punctuation = []
+  reassembled = ""
+  
+  # Setting aside certain punctuation marks
+  if LEADING_PUNCTUATION.include?(word.slice(0)) and (word.size > 1) # don't want empty before next step
+    leading_punctuation << word.slice!(0)
   end
+  while TRAILING_PUNCTUATION.include?(word.slice(-1))
+    trailing_punctuation << word.slice!(-1)
+  end
+  
+  # Substituions of the word itself
+  if WORDS.has_key?(word.downcase)
+    reassembled = WORDS[word.downcase].capitalize.gsub("'","\x27")
+  elsif PLACES.has_key?(word.downcase)
+    reassembled = PLACES[word.downcase].capitalize    
+  else
+    reassembled = word
+  end
+  
+  # Reassembly with punctuation
+  # ...leading punctuation
+  if (leading_punctuation.size == 1)
+    reassembled = leading_punctuation.first.chr + reassembled
+  end
+  # ...trailing punctuation
+  if trailing_punctuation.size > 0
+    trailing_punctuation.each do |l|
+      reassembled += l.chr
+    end
+  end
+  tmp << reassembled
 end
 puts tmp.join(" ")
