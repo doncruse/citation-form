@@ -21,34 +21,29 @@ I am not too optimistic that Microsoft will include compatibility with the Servi
 
 # How to install
 
-The first step is downloading the **citation-form.rb** script.
+The short answer is that you download the **citation-form.rb** script (that's all you need) and then make a new Services menu item:
 
+1. Open the Automator program (which is easiest to find through spotlight search).  Now select "Service" as what you're trying to create.
 
-### in the Services menu
+1. The default should be a text-based service.  That's right.  Just be sure to check the box that you want to "replace selected text."
 
-To add this as a service, we need to fire up a program called Automator. The easiest way to locate it is through the spotlight search &mdash; just type in "Automator."
+2. From the library of possible actions on the left, you want to choose "Run Shell Script."  Then drag that over to the work area on the right.
 
-Once you've launched it, you should be treated to this little guy in your dock:
+3. I wrote my script in a language called Ruby.  So you want to select "/usr/bin/ruby" from that little drop-down menu on the right.
 
-<img align = "center" src="http://www.github.com/doncruse/citation-form/howto/automator-dude.png" alt="Automator icon"/>
+4. Open up my script in your text editor of choice (TextEdit works fine), then copy and paste all of it into this Run Shell Script box.
 
-And your screen should include this startup menu:
+5. Save your automator action (command-S or under the File menu), giving it the name you want to appear in the Services menu.  I chose "CiteForm"; you may prefer a verb, such as "Abbreviate Case Citation" or the like.
 
-<img align="center" src="howto/automator-menu.png" alt="Main Automator menu"/>
+6. (Optional)  Now open up the System Preferences pane, choose Keyboard, then make a new keyboard shortcut for this service.  (I chose ctrl-option-command-C, which works well on my laptop and doesn't conflict with other shortcuts built into my word processor.)
 
-Select "Service" as the type of automator action that you want to create.  Then click "Choose" (lower right) to continue.
-
-Now you should see a blank automator action.  The default (lucky for us) is to have a service that focuses on *text*, which is exactly what we want.  But be sure to put a check in the little box that says "replace "
-
-### as a keyboard shortcut
-
-TO COME
+If you want the longer step-by-step, with pictures... that's something I will do if people request it.
 
 # How to use it
 
-Just highlight the case name and then invoke the service.  If you added a keyboard shortcut, just hit those keys.  If not, you can find the service under the "Services" menu in the drop-down menu beneath the name of the software that holds your text.
+Just highlight the case name and then invoke the service.  If you added a keyboard shortcut, just hit your key combination.  (Mine is control-option-command-C.)  If not, you can find the name under the "Services" menu in the drop-down menu beneath the name of the software that holds your text.
 
-You'll want to make sure that the apostrophe symbols are to your liking.  If you prefer smart quotes, you may have to replace them manually.
+**Note:** The apostrophes in the abbreviations show up as what people commonly refer to as "dumb" quotes.  You should glance at the cites to see if you need to "smarten" them up.
 
 # Troubleshooting
 
