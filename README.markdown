@@ -41,15 +41,17 @@ If you want the longer step-by-step, with pictures... that's something I will do
 
 # How to use it
 
-Just highlight the case name and then invoke the service.  If you added a keyboard shortcut, just hit your key combination.  (Mine is control-option-command-C.)  If not, you can find the name under the "Services" menu in the drop-down menu beneath the name of the software that holds your text.
+Just highlight the case name &mdash; and *only* the case name &mdash; and invoke the service.  If you added a keyboard shortcut, just hit your key combination.  (Mine is control-option-command-C.)  If not, you can find it listed under the "Services" menu in the drop-down menu beneath the name of the software that holds your text.
+
+Do not point this script at other text besides case names, especially not text you care about (such as the rest of your brief).
 
 **Note:** The apostrophes in the abbreviations show up as what people commonly refer to as "dumb" quotes.  You should glance at the cites to see if you need to "smarten" them up.
 
 # Troubleshooting
 
-If you don't see anything, then either (a) you don't have text highlighted or selected; (b) you're using software that does not support Services (do *any* services appear?); or (c) there was a problem with your installation.
+If you don't see anything, then either (a) you don't have any text highlighted or selected; (b) you're using software that does not support Services (do *any* services appear?); or (c) there was a problem with your installation.
 
-Fixing (a) is obvious.  Fixing (b) requires someone to hear your cries in Redmond, Washington.  Fixing (c) might be tricky.  If you have problems with it, please first try repeating the steps above.  If that still doesn't work, please open an "Issue" or send me an email.
+Fixing (a) is easy.  Fixing (b) requires someone to hear your cries in Redmond, Washington.  Fixing (c) might be tricky.  If you have problems with it, please first try repeating the steps above.  If that still doesn't work, please open an "Issue" or send me an email.
 
 # How to suggest edits
 
