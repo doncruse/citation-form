@@ -2,13 +2,20 @@
 #
 # Original version August 18, 2010
 # by Don Cruse
-# http://doncruse.github.com
+# http://github.com/doncruse/citation-form
 # 
-#	License: http://www.opensource.org/licenses/mit-license.php
+# If you want to know more about my projects, I write about 
+# them on my law blog (http://www.scotxblog.com).
 #
-# Short form:
-# You are of course welcome to edit this list, adding or
-# removing abbreviations as you see fit.
+# This program is fully open source & free under the MIT license
+#	License: http://www.opensource.org/licenses/mit-license.php
+# 
+# You are free to modify this as you wish.
+
+
+# This is what is known as a "hash."  Each word on the left
+# is mapped to one abbreviation.  I chose lowercase to make
+# the matching process a little simpler.
 
 WORDS = {
     "academy" => "Acad.",
@@ -406,6 +413,12 @@ WORDS = {
 # (without regard to capitalization), and if so does
 # the substitution.  Then it reassembles the text
 # with spaces.
+#
+# I have added some logic to understand punctuation.
+# It can understand opening or closing parentheses that
+# touch a word, and it can also understand a trailing comma
+# or semicolon.  Any other punctuation will cause the word
+# not to be a match.
 
 # KNOWN ISSUE: This does not yet know how to process
 # terms that might be split into two words, such as "rail road"
@@ -415,21 +428,7 @@ WORDS = {
 # KNOWN ISSUE: This produces 'dumb' apostrophes, which require
 # some tweaking in your word processor.
 
-# You might want to combine this with a nice
-# titlecase routine, such as the one published
-# by John Gruber.
-# Unfortunately, his does not first downcase the text,
-# so it chokes on ALL CAPS and can't fix it.
-# Because so many courts use the hideous ALL CAPS, 
-# I may have to modify his program or put another
-# script in between.
-
-#####
-# whitelisted punctuation to save at the beginning and end of words
-# 40 is ASCII for a left paren, 41 is a right paren, 44 is a comma, 59 is a semicolon
-#
-# leading: only a left paren is understood
-# trailing: commas, semicolons, and right parens are understood
+# List of valid punctuation marks, by ASCII codes
 LEADING_PUNCTUATION = [40]
 TRAILING_PUNCTUATION = [41, 44, 59]
 
@@ -437,20 +436,24 @@ casename = STDIN.read
 casename.strip!
 tmp = Array.new
 
+# break apart the cite into words
 casename.split(/\s/).each do |word|
+  # reset things for each word
   leading_punctuation = []
   trailing_punctuation = []
   reassembled = ""
   
-  # Setting aside certain punctuation marks
-  if LEADING_PUNCTUATION.include?(word.slice(0)) and (word.size > 1) # don't want empty before next step
+  # See if there is a leading parenthesis; if so, set it aside
+  if LEADING_PUNCTUATION.include?(word.slice(0)) and (word.size > 1)
     leading_punctuation << word.slice!(0)
   end
+  # See if there is a trailing comma, semicolon, or closing parenthesis
   while TRAILING_PUNCTUATION.include?(word.slice(-1))
     trailing_punctuation << word.slice!(-1)
   end
   
-  # Substituions of the word itself
+  # Look at the word itself. See if there is a match in one of the
+  # lists above.  If so, substitute as directed.
   if WORDS.has_key?(word.downcase)
     reassembled = WORDS[word.downcase].capitalize.gsub("'","\x27")
   elsif PLACES.has_key?(word.downcase)
@@ -459,17 +462,20 @@ casename.split(/\s/).each do |word|
     reassembled = word
   end
   
-  # Reassembly with punctuation
-  # ...leading punctuation
+  # Now recombine with any punctuation marks that were set aside.
+  # ... start with any leading punctuation
   if (leading_punctuation.size == 1)
     reassembled = leading_punctuation.first.chr + reassembled
   end
-  # ...trailing punctuation
+  # ...then add back the trailing punctuation
   if trailing_punctuation.size > 0
     trailing_punctuation.each do |l|
       reassembled += l.chr
     end
   end
+  # now take the abbreviated word and add it back to the list
   tmp << reassembled
 end
+# recombine all the component words back into the case name
+# and then replace the selected text in the document
 puts tmp.join(" ")
