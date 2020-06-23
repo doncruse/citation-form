@@ -455,7 +455,7 @@ casename.split(/\s/).each do |word|
   # Look at the word itself. See if there is a match in one of the
   # lists above.  If so, substitute as directed.
   if WORDS.has_key?(word.downcase)
-    reassembled = WORDS[word.downcase].capitalize.gsub("'","\x27")
+    reassembled = WORDS[word.downcase].gsub("'","\x27")
   elsif PLACES.has_key?(word.downcase)
     reassembled = PLACES[word.downcase].capitalize    
   else
